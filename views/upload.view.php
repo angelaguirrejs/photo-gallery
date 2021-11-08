@@ -25,13 +25,17 @@
     <div class="container">
         <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data" class="form">
             <label for="photo">Selecciona la foto</label>
-            <input type="file" id="photo" name="photo">
+            <input type="file" id="photo" name="photo" require>
 
             <label for="title">Título de la foto</label>
-            <input type="text" id="title" name="title"  placeholder="Título">
+            <input type="text" id="title" name="title"  placeholder="Título" require>
 
             <label for="text">Descripción</label>
-            <textarea name="description" id="text" cols="30" rows="10" placeholder="Descripción"></textarea>
+            <textarear name="description" id="text" cols="30" rows="10" placeholder="Descripción" require></textarear>
+
+            <?php if(isset($errors)): ?>
+                <p class="error"><?php echo $errors ?></p>
+            <?php endif ?>
 
             <input type="submit" class="submit" value="Subir foto">
         </form>
