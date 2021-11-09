@@ -18,14 +18,14 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="title">Foto: 1.jpg</h1>
+            <h1 class="title"><?php echo $photo['title'] ?></h1>
         </div>
     </header>
 
     <div class="container">
         <div class="photo">
-            <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dicta eos saepe alias itaque quibusdam sed in minima nemo doloremque et molestias reiciendis unde, iste, quam ad necessitatibus adipisci corrupti.</p>
+            <img src="<?php echo $photo['photo'] ?>" alt="">
+            <p class="text"><?php echo $photo['description'] ?></p>
             <a href="index.php" class="back"><i class="fa fa-long-arrow-left"></i> Regresar</a>
         </div>
     </div>
