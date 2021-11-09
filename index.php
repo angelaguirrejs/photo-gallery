@@ -19,7 +19,7 @@ $statement->execute();
 
 $photos = $statement->fetchAll();
 
-if(!$photos) {
+if(!$photos && isset($_GET['page'])){
     header('Location: index.php');
 }
 
