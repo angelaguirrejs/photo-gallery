@@ -24,56 +24,26 @@
 
     <section class="photos">
         <div class="container">
-            <div class="thumb">
-                <a href="">
-                    <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="">
-                    <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="">
-                    <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="">
-                    <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="">
-                    <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="">
-                    <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="">
-                    <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="">
-                    <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="">
-                    <img src="https://images.pexels.com/photos/9461022/pexels-photo-9461022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </a>
-            </div>
-        
+            <?php foreach($photos as $photo): ?>
+
+                <div class="thumb">
+                    <a href="<?php echo 'photo.php?id=' . $photo['id']; ?>">
+                        <img src="<?php echo $photo['photo'] ?>" alt="">
+                    </a>
+                </div>
+            <?php endforeach; ?>
+
             <div class="pagination">
-                <a href="#" class="left"><i class="fa fa-long-arrow-left"></i> Página Anterior</a>
-                <a href="#" class="right">Página Siguiente <i class="fa fa-long-arrow-right"></i></a>
-            </div> 
+                <?php if($current_page > 1): ?>
+                    <a href="<?php echo 'index.php?page=' . $current_page - 1 ?>" class="left"><i class="fa fa-long-arrow-left"></i> Página Anterior</a>
+                <?php endif; ?>
+
+                <?php if($pages_number != $current_page): ?>
+                    <a href="<?php echo 'index.php?page=' . $current_page + 1 ?>" class="right">Página Siguiente <i class="fa fa-long-arrow-right"></i></a>
+                <?php endif; ?>
+
+            </div>
+
         </div>
     </section>
 

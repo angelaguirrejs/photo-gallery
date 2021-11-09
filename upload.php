@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES)){
 
         header('Location: index.php');
     } else {
-        $errors = "El archivo no es una imagen o es muy pesado";
+        $errors = "The file is not an image or is very heavy";
     }
 
 }

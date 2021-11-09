@@ -31,7 +31,7 @@
             <input type="text" id="title" name="title"  placeholder="Título" require>
 
             <label for="text">Descripción</label>
-            <textarear name="description" id="text" cols="30" rows="10" placeholder="Descripción" require></textarear>
+            <textarea name="description" id="text" cols="30" rows="10" placeholder="Descripción" require></textarea>
 
             <?php if(isset($errors)): ?>
                 <p class="error"><?php echo $errors ?></p>
