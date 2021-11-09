@@ -16,6 +16,9 @@
 
 </head>
 <body>
+
+    <?php require 'navbar.view.php' ?>
+
     <header>
         <div class="container">
             <h1 class="title">Subir fotos</h1>
